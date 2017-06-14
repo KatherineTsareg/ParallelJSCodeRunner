@@ -12,12 +12,13 @@ h1{
     line-height: 1.1;
 }
 
+
 .btn{
     border: none;
     margin: 0px 0px 20px 0px;
     float: right;
-    width: 120px;
-    height: 80px;
+    width: 110px;
+    height: 70px;
 
 }
 .mainField{
@@ -40,7 +41,7 @@ h1{
 }
 
 .mask .popup{
-    /*display: block;*/
+    display: none;
     margin: 10% auto 0px auto;
     width:500px;
     height: 300px;
@@ -48,14 +49,9 @@ h1{
     background-color: whitesmoke;
     border-radius:5px;
     box-shadow: 0px 0px 10px #000;
-    text-align: center;
     font-size: 15px;
 }
-.mask h2{
-    color: black;
-    margin-top: 0px;
-    padding-top: 5px;
-}
+
 .mask p{
     margin-top: 30px;
 }
@@ -66,19 +62,33 @@ h1{
     text-align: center;
     margin: 10px auto 0px auto;
 }
-.mask .btn{
+.mask .samples .btn{
     width:100%;
     height: 40px;
 }
+
 .mask .samples-block{
     width: 80%;
     margin: 40px auto 0px auto;
 }
-
-.settings{
+.mask h2{
+    color: black;
+    margin-top: 0px;
+    padding-top: 5px;
+    line-height: 1.1;
+    font-size: 30px;
+    font-weight: 900;
+}
+.mask .samples{
+    display:none;
+}
+.mask .settings{
     display: none;
 }
 
-.examples{
-    display:none;
+.mask .close-button{
+    float: right;
+    margin-right: 20px;
+    width: 70px;
+    height: 30px;
 }

@@ -2,10 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link href="css/reset.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/styles.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
         <title>JavaScript Runner</title>
     </head>
     <body>
@@ -16,8 +14,8 @@
             <div class="col-md-1 buttons">
                 <button type="button" class="btn btn-success">RUN</button>
                 <button type="button" class="btn btn-danger">DELETE</button>
-                <p><button type="button" class="btn btn-info">EXAMPLES</button>
-                <button type="button" class="btn btn-primary">SETTINGS</button>
+                <p><button type="button" class="btn btn-primary" id="button-samples">SAMPLES</button>
+                <button type="button" class="btn btn-primary" id="button-settings">SETTINGS</button>
             </div>
             <div class="col-md-6">
                 <textarea class="form-control" rows=25 id="comment"></textarea>
@@ -26,24 +24,29 @@
                 <textarea class="form-control" rows=25 id="comment"></textarea>
             </div>
         </div>
-
         <div class="mask">
-            <div class="settings popup">
-                <h2>Settings:</h2>
-                <p>Select the number of threads to work with</p>
-                <div class="form-group">
-                    <label class="radio-inline"><input type="radio" name="optradio">1</label>
-                    <label class="radio-inline"><input type="radio" name="optradio">2</label>
-                    <p>or enter the desired number of threads</p>
-                    <input type="number" class="form-control input-number-box">
+            <div class="popup text-center">
+                <div class="settings">
+                    <h2>Settings:</h2>
+                    <p>Select the number of threads to work with</p>
+                    <div class="form-group">
+                        <label class="radio-inline"><input type="radio" name="optradio">1</label>
+                        <label class="radio-inline"><input type="radio" name="optradio">2</label>
+                        <p>or enter the desired number of threads</p>
+                        <input type="number" class="form-control input-number-box">
+                    </div>
+                    <button type="button-inline" class="btn close-button">Save</button>
+                    <button type="button-inline" class="btn close-button" id="close-button-settings">Close</button>
                 </div>
-            </div>
-            <div class="popup examples">
-                <h2>Samples</h2>
-                <div class="samples-block">
-                    <button type="button" class="btn">Get Pi Number</button>
+                <div class="samples">
+                    <h2>Samples</h2>
+                    <div class="samples-block">
+                        <button type="button" class="btn">Get Pi Number</button>
+                    </div>
+                    <button type="button" class="close-button" id="close-button-samples">Close</button>
                 </div>
             </div>
         </div>
+        <script src="scripts.js"></script>
     </body>
 </html>
