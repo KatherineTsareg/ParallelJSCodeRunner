@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link href="css/reset.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Nunito|Kaushan+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
         <link href="css/bootstrap.css" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
         <title>JavaScript Runner</title>
@@ -13,7 +13,7 @@
             <h1 class="text-center">Online JavaScript code runner</h1>
         </header>
         <div class="mainField">
-            <div class="col-md-1">
+            <div class="col-md-1 buttons">
                 <button type="button" class="btn btn-success">RUN</button>
                 <button type="button" class="btn btn-danger">DELETE</button>
                 <p><button type="button" class="btn btn-info">EXAMPLES</button>
@@ -24,6 +24,25 @@
             </div>
             <div class="col-md-5">
                 <textarea class="form-control" rows=25 id="comment"></textarea>
+            </div>
+        </div>
+
+        <div class="mask">
+            <div class="settings popup">
+                <h2>Settings:</h2>
+                <p>Select the number of threads to work with</p>
+                <div class="form-group">
+                    <label class="radio-inline"><input type="radio" name="optradio">1</label>
+                    <label class="radio-inline"><input type="radio" name="optradio">2</label>
+                    <p>or enter the desired number of threads</p>
+                    <input type="number" class="form-control input-number-box">
+                </div>
+            </div>
+            <div class="popup examples">
+                <h2>Samples</h2>
+                <div class="samples-block">
+                    <button type="button" class="btn">Get Pi Number</button>
+                </div>
             </div>
         </div>
     </body>
