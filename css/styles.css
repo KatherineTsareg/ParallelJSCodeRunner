@@ -1,0 +1,21 @@
+header {
+    background: #2b1d1f;
+    height: 60px;
+}
+h1{
+    margin-top: 0px;
+    padding-top: 10px;
+    color: white;
+    font-family: 'Kaushan Script', cursive;
+    line-height: 1.1;
+}
+
+button{
+    font-family: 'Nunito', sans-serif;
+    margin: 20px 0px 20px 0px;
+    float: right;
+}
+
+.mainField{
+    margin: 40px 0px 0px 40px;
+}

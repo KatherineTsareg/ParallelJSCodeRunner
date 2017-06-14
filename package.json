@@ -1,0 +1,23 @@
+{
+  "name": "jscoderunner",
+  "version": "1.0.0",
+  "description": "Online JavaScript code runner with Web WOrkers Api",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KatherineTsareg/ParallelJSCodeRunner.git"
+  },
+  "author": "KateTsareg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KatherineTsareg/ParallelJSCodeRunner/issues"
+  },
+  "homepage": "https://github.com/KatherineTsareg/ParallelJSCodeRunner#readme"
+}
