@@ -21,12 +21,16 @@ module.exports = function(grunt) {
 				dest: 'build/index.html'
 			},
 			js: {
-				src: ['scripts/*.js'],
+				src: ['node_modules/codemirror/lib/codemirror.js',
+					  'node_modules/codemirror/mode/javascript/javascript.js',
+					  'scripts/*.js'],
 				dest: 'build/scripts.js'
 			},
 			css: {
 				src: ['node_modules/bootstrap/dist/css/bootstrap.min.css',
 					'node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
+					'node_modules/codemirror/lib/codemirror.css',
+					'node_modules/codemirror/theme/default.css',
 					'css/*.css'],
 				dest: 'build/styles.css'
 			},

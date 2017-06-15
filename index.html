@@ -13,15 +13,18 @@
         <div class="mainField">
             <div class="col-md-1 buttons">
                 <button type="button" class="btn btn-success" id="button-run">RUN</button>
-                <button type="button" class="btn btn-danger" id="button-delete">DELETE</button>
+                <button type="button" class="btn btn-danger" id="button-delete">CLEAR</button>
                 <p><button type="button" class="btn btn-primary" id="button-samples">SAMPLES</button>
                 <button type="button" class="btn btn-primary" id="button-settings">SETTINGS</button>
+                <button type="button" class="btn btn-info" id="button-info">INFO</button>
             </div>
             <div class="col-md-6">
-                <textarea class="form-control" rows=25 id="input-textarea"></textarea>
+                <textarea class="form-control" rows=10 id="input-textarea-1"></textarea>
+                <textarea class="form-control" rows=5 id="input-textarea-2"></textarea>
+                <textarea class="form-control" rows=10 id="input-textarea-3"></textarea>
             </div>
             <div class="col-md-5">
-                <textarea class="form-control" rows=25 id="comment"></textarea>
+                <textarea class="form-control" rows=27 id="comment"></textarea>
             </div>
         </div>
         <div class="mask">
@@ -44,6 +47,11 @@
                         <button type="button" class="btn">Get Pi Number</button>
                     </div>
                     <button type="button" class="close-button" id="close-button-samples">Close</button>
+                </div>
+                <div class="info">
+                    <h2>Info</h2>
+                    <p class="text-center">Введи в три поля код "до воркера", "воркер", "после воркера" соответственно</p>
+                    <button type="button" class="close-button" id="close-button-info">Close</button>
                 </div>
             </div>
         </div>
