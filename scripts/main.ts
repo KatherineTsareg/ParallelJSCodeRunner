@@ -1,5 +1,5 @@
 let threadNumber: number = window.navigator.hardwareConcurrency;
-
+let sampleGetPi: Array<string> = ["lol1","lol2","lol3"];
 function hide(className: string){
     const elements = document.getElementsByClassName(className)[0] as HTMLElement;
     elements.style.display = 'none';
@@ -48,6 +48,16 @@ window.onload = function() {
     (document.getElementById("close-button-info") as HTMLElement).onclick = function(){
         hide_popup("info");
     };
+    (document.getElementById("button-sample-getpi") as HTMLElement).onclick = function(){
+        insertTextInTextarea("input-textarea-1", sampleGetPi[0]);
+        insertTextInTextarea("input-textarea-2", sampleGetPi[1]);
+        insertTextInTextarea("input-textarea-3", sampleGetPi[2]);
+        hide_popup("samples");
+    };
+    function insertTextInTextarea(textareaID: string, text: string){
+        const elem: any = document.getElementById(textareaID);
+        elem.value = text;
+    }
     function getInputText(formId: string){
         const elem: any = document.getElementById(formId);
         return elem.value;
