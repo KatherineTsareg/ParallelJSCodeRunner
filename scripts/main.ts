@@ -35,8 +35,15 @@ window.onload = function() {
         const elem: any = document.getElementById(formId);
         return elem.value;
     };
+    function clearTextArea(formId: string){
+        const elem: any = document.getElementById(formId);
+        elem.value = "";
+    }
     (document.getElementById("button-run") as HTMLElement).onclick = function(){
         var inputText = getInputText("input-textarea");
         let worker = new CWorkers(inputText);
+    };
+    (document.getElementById("button-delete") as HTMLElement).onclick = function(){
+        clearTextArea("input-textarea");
     }
 }
