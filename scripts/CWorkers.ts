@@ -13,13 +13,8 @@ class CWorkers {
         this.m_threadNumber = value;
     }
     public run(){
+        var part1: string = this.m_inputCode[0];
+        var worker: string = this.m_inputCode[1];
+        var part2: string = this.m_inputCode[3];
     };
-
-
-    private parseCode(){
-        let strIn = this.m_inputCode;
-        var part1 = "";
-        var worker = "";
-        var part2 = "";
-    }
 }

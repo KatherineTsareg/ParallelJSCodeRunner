@@ -1,3 +1,5 @@
+let threadNumber: number = window.navigator.hardwareConcurrency;
+
 function hide(className: string){
     const elements = document.getElementsByClassName(className)[0] as HTMLElement;
     elements.style.display = 'none';
@@ -16,9 +18,18 @@ function hide_popup(popup_name: string){
     hide("popup");
     hide(popup_name);
 }
-
+function addRadioButtons(){
+    for (var i=1; i<=threadNumber; i++){
+        var radioHtml = '<input type="radio" name="optradio" id="button-thread-' + i + '"/>'+ i;
+        var elem = document.createElement('lable');
+        elem.className= 'radio-inline';
+        elem.innerHTML = radioHtml;
+        (document.getElementById("settings-radiobuttons") as HTMLElement).appendChild(elem);
+    }
+}
 
 window.onload = function() {
+    addRadioButtons();
     (document.getElementById("button-settings") as HTMLElement).onclick = function(){
         show_popup("settings");
     };
@@ -50,6 +61,7 @@ window.onload = function() {
         var inputText2 = getInputText("input-textarea-2");
         var inputText3 = getInputText("input-textarea-3");
         var lst:Array<string> = [inputText1,inputText2,inputText3];
+        alert(threadNumber);
         let worker = new CWorkers(lst);
     };
     (document.getElementById("button-delete") as HTMLElement).onclick = function(){
