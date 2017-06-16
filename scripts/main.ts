@@ -1,5 +1,10 @@
 let threadNumber: number = window.navigator.hardwareConcurrency;
-let sampleGetPi: Array<string> = ["lol1","lol2","lol3"];
+let sampleGetPi: Array<string> = [
+    "var accuracy = 1000\;",
+    "onmessage = function(accuracy\)\n\{\n    var count = 0\;\n    for (var i = 0; i < accuracy.data; i++)\{\n        for(var j = 0; j < accuracy.data; j++)\{\n            var x=i/accuracy.data\;\n            var y=j/accuracy.data\;\n            if ((x * x + y * y) <= 1) ++count\;\n        \}\n    }\;\n    postMessage(count)\;\n};",
+    "worker.postMessage(accuracy)\;\nworker.onmessage = function (event\)\n\{\nalert(event.data/ accuracy /accuracy * 4)\;\n};"];
+
+
 function hide(className: string){
     const elements = document.getElementsByClassName(className)[0] as HTMLElement;
     elements.style.display = 'none';
@@ -54,6 +59,19 @@ window.onload = function() {
         insertTextInTextarea("input-textarea-3", sampleGetPi[2]);
         hide_popup("samples");
     };
+    (document.getElementById("button-run") as HTMLElement).onclick = function(){
+        var inputText1 = getInputText("input-textarea-1");
+        var inputText2 = getInputText("input-textarea-2");
+        var inputText3: string = getInputText("input-textarea-3");
+        var lst:Array<string> = [inputText1,inputText2,inputText3];
+        let worker = new CWorkers(lst, threadNumber);
+        worker.run();
+    };
+    (document.getElementById("button-delete") as HTMLElement).onclick = function(){
+        clearTextArea("input-textarea-1");
+        clearTextArea("input-textarea-2");
+        clearTextArea("input-textarea-3");
+    };
     function insertTextInTextarea(textareaID: string, text: string){
         const elem: any = document.getElementById(textareaID);
         elem.value = text;
@@ -65,18 +83,5 @@ window.onload = function() {
     function clearTextArea(formId: string){
         const elem: any = document.getElementById(formId);
         elem.value = "";
-    }
-    (document.getElementById("button-run") as HTMLElement).onclick = function(){
-        var inputText1 = getInputText("input-textarea-1");
-        var inputText2 = getInputText("input-textarea-2");
-        var inputText3 = getInputText("input-textarea-3");
-        var lst:Array<string> = [inputText1,inputText2,inputText3];
-        alert(threadNumber);
-        let worker = new CWorkers(lst);
-    };
-    (document.getElementById("button-delete") as HTMLElement).onclick = function(){
-        clearTextArea("input-textarea-1");
-        clearTextArea("input-textarea-2");
-        clearTextArea("input-textarea-3");
     }
 }
