@@ -53,6 +53,24 @@ window.onload = function() {
     (document.getElementById("close-button-info") as HTMLElement).onclick = function(){
         hide_popup("info");
     };
+    ////////////////////////////////////////////////////////
+    (document.getElementById("button-thread-1") as HTMLElement).onclick = function(){
+        threadNumber = 1;
+    };
+     (document.getElementById("button-thread-2") as HTMLElement).onclick = function(){
+        threadNumber = 2;
+    };
+     (document.getElementById("button-thread-3") as HTMLElement).onclick = function(){
+        threadNumber = 3;
+    };
+     (document.getElementById("button-thread-4") as HTMLElement).onclick = function(){
+        threadNumber = 4;
+    };
+    (document.getElementById("save-button-settings") as HTMLElement).onclick = function(){
+        var numb = getInputText("input-number-threads");
+        if (numb != null) threadNumber = numb;
+        hide_popup("info");
+    };
     (document.getElementById("button-sample-getpi") as HTMLElement).onclick = function(){
         insertTextInTextarea("input-textarea-1", sampleGetPi[0]);
         insertTextInTextarea("input-textarea-2", sampleGetPi[1]);
