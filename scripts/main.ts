@@ -1,8 +1,8 @@
 let threadNumber: number = window.navigator.hardwareConcurrency;
 let sampleGetPi: Array<string> = [
-    "var accuracy = 1000\;",
-    "onmessage = function(accuracy\)\n\{\n    var count = 0\;\n    for (var i = 0; i < accuracy.data; i++)\{\n        for(var j = 0; j < accuracy.data; j++)\{\n            var x=i/accuracy.data\;\n            var y=j/accuracy.data\;\n            if ((x * x + y * y) <= 1) ++count\;\n        \}\n    }\;\n    postMessage(count)\;\n};",
-    "worker.postMessage(accuracy)\;\nworker.onmessage = function (event\)\n\{\nalert(event.data/ accuracy /accuracy * 4)\;\n};"];
+    "var accuracy = 10000\;\nvar pi = 0.0\;",
+    "onmessage = function(accuracy\)\n\{\n    var count = 0\;\n    for (var i = 0; i < accuracy.data; i++)\{\n        var x=(Math.random() * (1000 + 1000) - 1000)/1000\;\n        var y=(Math.random() * (1000 + 1000) - 1000)/1000\;\n        if ((x * x + y * y) <= 1) ++count\;\n    }\;\n    postMessage(count)\;\n};",
+    "worker.postMessage(accuracy)\;\nworker.onmessage = function (event\)\n\{\npi += (event.data/ accuracy * 4)\;\n};"];
 
 
 function hide(className: string){
@@ -68,8 +68,9 @@ window.onload = function() {
     };
     (document.getElementById("save-button-settings") as HTMLElement).onclick = function(){
         var numb = getInputText("input-number-threads");
-        if (numb != null) threadNumber = numb;
-        hide_popup("info");
+        if (numb != "") threadNumber = numb;
+        alert(threadNumber);
+        hide_popup("settings");
     };
     (document.getElementById("button-sample-getpi") as HTMLElement).onclick = function(){
         insertTextInTextarea("input-textarea-1", sampleGetPi[0]);
