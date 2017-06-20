@@ -17,20 +17,14 @@ class CWorkers {
         var part1: string = this.m_inputCode[0];
         var workerString: string = this.m_inputCode[1];
         var part2: string = this.m_inputCode[2];
-        var postmessageParam = this.getPostmessageParam(part2);
-        var onmessageCode = this.getOnmessageCode(part2);
         //множество воркеров
         var insertTextString = "(document.getElementById('result-field')).value = 'Common result: ' + pi;";
         var manyWorkersCreating = "var workerList = []\;\nfor (var i = 0; i < this.m_threadNumber; i++) \{\n    var blob = new Blob([workerString])\;\n    var blobURL = window.URL.createObjectURL(blob)\;\n    var newWorker = new Worker(blobURL)\;\n    workerList.push(newWorker)\;\n}";
         var paralInputParameter:string = this.editPostMessageParameter(part2);
         var callWorkers = "for (var i=0; i<this.m_threadNumber;i++){\n     var worker = workerList[i];\n" +  this.insertHtml(paralInputParameter, insertTextString) + "\n\}\;";
 
-        
-
         var manyWorkerAllCode = part1 +"\n"+ manyWorkersCreating +"\n"+ callWorkers;
-        alert(manyWorkerAllCode);
         eval(manyWorkerAllCode);
-        //window.console.log(a);
     }
 
     private editPostMessageParameter(codeStr:string):string{

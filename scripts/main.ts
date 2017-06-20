@@ -69,7 +69,6 @@ window.onload = function() {
     (document.getElementById("save-button-settings") as HTMLElement).onclick = function(){
         var numb = getInputText("input-number-threads");
         if (numb != "") threadNumber = numb;
-        alert(threadNumber);
         hide_popup("settings");
     };
     (document.getElementById("button-sample-getpi") as HTMLElement).onclick = function(){
